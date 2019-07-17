@@ -5,6 +5,7 @@ import { Image } from 'react-native';
 import Main from './pages/Main';
 import New from './pages/New';
 import React from 'react';
+import Update from './pages/Update';
 import logo from './assets/logo.png';
 
 export default createAppContainer(
@@ -12,6 +13,7 @@ export default createAppContainer(
         Main,
         New,
         History,
+        Update,
     },{
         defaultNavigationOptions: {            
             headerTintColor: '#000',

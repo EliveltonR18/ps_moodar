@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { Component } from 'react';
 
 import FellingCard from '../components/FellingCard'
@@ -13,6 +13,10 @@ export default class History extends Component {
 
         this.setState({ fellings: response.data })
     }
+    handleClickCard = item =>{
+        this.props.navigation.navigate('Update', {id: item._id});
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -23,7 +27,9 @@ export default class History extends Component {
                     data={this.state.fellings}
                     keyExtractor={felling => felling._id}
                     renderItem={({ item }) => (
-                        <FellingCard style={styles.fellingCard} item={item}/>
+                        <TouchableOpacity onPress={() => {this.handleClickCard(item)}}>
+                            <FellingCard style={styles.fellingCard} item={item}/>
+                        </TouchableOpacity>
                     )}
                 ></FlatList>
             </View>

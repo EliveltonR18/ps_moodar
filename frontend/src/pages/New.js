@@ -4,12 +4,11 @@ import React, { Component } from 'react';
 import DatePicker from 'react-native-datepicker';
 import api from '../services/api';
 
-export default class New extends Component {
+class New extends Component {
   year = new Date().getFullYear();
   monthAux = new Date().getMonth();
   month = this.monthAux + 1;
   day = new Date().getDate();
-  
   state = {
     commenter: '',
     stress:'',
@@ -47,7 +46,7 @@ export default class New extends Component {
             enabled
           > 
           <Text style={styles.title}>Preencha os campos abaixo:</Text>
-          
+          <Text>Selecione a data:</Text>
           <DatePicker
           style={{width: 200}}
           date={this.state.date} //initial date from state
@@ -170,3 +169,5 @@ const styles = StyleSheet.create({
   },
 
 });
+
+export default New;

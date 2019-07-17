@@ -46,7 +46,7 @@ module.exports = {
                 }, { new: true, runValidators: true });
 
             if(felling.stress == null){
-                return res.status(400).send({error: 'Error updating felling'});
+                return res.status(402).send({error: 'Error updating felling'});
             }else{
                 return res.send(felling);
             }
